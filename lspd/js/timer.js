@@ -31,7 +31,7 @@ function parseTime(str) {
   }
 }
 
-function updateDisplay() {
+function updateTimerDisplay() {
   timerDisplay.textContent = formatTime(totalSeconds);
 }
 
@@ -61,12 +61,12 @@ function startTimer() {
   startTimerBtn.disabled = true;
   resetTimerBtn.disabled = true;
   stopTimerBtn.disabled = false;
-  updateDisplay();
+  updateTimerDisplay();
 
   countdown = setInterval(() => {
     if (totalSeconds > 0) {
       totalSeconds--;
-      updateDisplay();
+      updateTimerDisplay();
     } else {
       clearInterval(countdown);
       countdown = null;
@@ -90,7 +90,7 @@ function resetTimer() {
   countdown = null;
   totalSeconds = 0;
   stopAlarm();
-  updateDisplay();
+  updateTimerDisplay();
   input.value = "";
   input.classList.remove("hidden");
   timerDisplay.classList.add("hidden");
@@ -99,7 +99,7 @@ function resetTimer() {
   stopTimerBtn.disabled = true;
 }
 
-updateDisplay();
+updateTimerDisplay();
 
 window.startTimer = startTimer;
 window.stopTimer = stopTimer;
