@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>LSPD FT Panel</title>
+  </head>
+  <body>
+    <!-- The RSRP ES FT Panel -->
+    <!-- Made by Fixifr (dc: fixifr#0) ❤️ -->
+
+    <h1>LSPD FT Panel</h1>
+
+    <div class="content">
+      <!-- Stopwatch -->
+      <div class="card stopwatch">
+        <span class="card-title">Stopwatch</span>
+        <span class="stopwatch-time" id="stopwatchDisplay">00:00:00</span>
+        <div class="container">
+          <button onclick="startStopwatch()" id="startStopwatch">Start</button>
+          <button onclick="stopStopwatch()" id="stopStopwatch" disabled>
+            Stop
+          </button>
+          <button onclick="resetStopwatch()" id="resetStopwatch">Reset</button>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div class="card timer">
+        <span class="card-title">Timer</span>
+        <input
+          type="text"
+          id="timerInput"
+          class="timer-input"
+          placeholder="Enter time (hh:mm:ss)"
+        />
+        <span class="timer-time hidden" id="timerTime">00:00:00</span>
+        <div class="container">
+          <button onclick="startTimer()" id="startTimer">Start</button>
+          <button onclick="stopTimer()" id="stopTimer" disabled>Stop</button>
+          <button onclick="resetTimer()" id="resetTimer">Reset</button>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="card notes">
+        <span class="card-title">Notes / Worklog Draft</span>
+        <textarea
+          id="notesBox"
+          class="notes-box"
+          placeholder="Put some notes here..."
+        ></textarea>
+        <div class="container">
+          <button onclick="saveNotes()">Save</button>
+          <button onclick="clearNotes()">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Links -->
+      <div class="card links">
+        <span class="card-title">Links</span>
+        <div class="option-container">
+          <label for="linkFilter" style="margin-right: 0">Show </label>
+          <select id="linkFilter" class="link-filter" style="margin-left: 0">
+            <option value="all">All Links</option>
+            <option value="ra">Ride Along Links</option>
+            <option value="training">Training Links</option>
+            <option value="interview">Interview Links</option>
+            <option value="other">Other Links</option>
+          </select>
+        </div>
+
+        <div class="container">
+          <a
+            href="https://docs.google.com/document/d/1hYuj2bIun4ajs-wuXQGXNeDL7cwzgDOQIAdY_EMYy6A/edit?tab=t.0"
+            target="_blank"
+            data-category="ra"
+            >LEO Ride Along Checklist</a
+          >
+          <a
+            href="https://docs.google.com/document/d/1_F9MvgNU-CgRoQKN0AVaEhR12pK-RnClxUEhg_E-Du0/edit?tab=t.0"
+            target="_blank"
+            data-category="training"
+            >LEO Basic Training Guide</a
+          >
+          <a
+            href="https://docs.google.com/document/d/1SzJsHR9sVoCYEKbcfCChmvzCq3ko1z6ZRjrNJXHHJ2I/edit?tab=t.0"
+            target="_blank"
+            data-category="interview"
+            >ES Interview Questions / Scenarios</a
+          >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1OKZKIvblQxiIS2MBBv1l7nIhi3nUvyyKsktOU10vKW4/edit?gid=457488973#gid=457488973"
+            target="_blank"
+            data-category="ra training interview other"
+            >LSPD FT Roster</a
+          >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1l3jdEjsYZgBJnGq6zEqrhQT8cNRKBC1M33gEpiDpLcg/edit?gid=1150207330#gid=1150207330"
+            target="_blank"
+            data-category="other"
+            >ES Logs</a
+          >
+          <a
+            href="https://docs.google.com/document/d/1-pyIrX9FVwnEblvEOPeESXg3AD457r4qAEDFbwFG0Iw/edit?tab=t.0"
+            target="_blank"
+            data-category="other"
+            >ES FTO/FTA/LC Orientation</a
+          >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1WecC_j5yAnop39TS1GVmhC3yXT-_08IxRtgM2xTB3cY/edit?gid=532935873#gid=532935873"
+            target="_blank"
+            data-category="ra training interview other"
+            >ES Discord Role IDs</a
+          >
+          <a
+            href="https://docs.google.com/document/d/1LvFyicZL6Mm9p7fB7m07j1lc63bs9ntbe1GLPmH2PY0/edit?tab=t.0"
+            target="_blank"
+            data-category="training"
+            >ES S.O.P.</a
+          >
+          <a
+            href="https://docs.google.com/spreadsheets/d/1ObjjXwhKutBrytGsKAFQFZgTLQapxKE-XNWTCtut5Nw/edit?gid=1062447261#gid=1062447261"
+            target="_blank"
+            data-category="ra training other"
+            >RSRP Rosters</a
+          >
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Timer Sound -->
+    <audio
+      src="../assets/timer.mp3"
+      id="timerSound"
+      preload="auto"
+      loop
+    ></audio>
+
+    <!-- Scripts -->
+    <script src="./js/stopwatch.js"></script>
+    <script src="./js/timer.js"></script>
+    <script src="./js/notes.js"></script>
+    <script src="./js/links.js"></script>
+  </body>
+</html>
