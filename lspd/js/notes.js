@@ -7,7 +7,7 @@ if (lsNotes !== null) {
 
 function saveNotes() {
     window.localStorage.setItem("notes", notesBox.value);
-    alert("Saved Notes");
+    alert("Saved Notes. You can now safely refresh.");
 }
 
 function clearNotes() {
