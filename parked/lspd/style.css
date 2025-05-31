@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a202c;
+  color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Scrapped the idea of a navigation bar. There was no need for one. */
+
+/* nav {
+    background-color: #2b313d;
+    width: calc(100% - 30px);
+    padding: 15px;
+}
+nav a {
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #a0aec0;
+}
+
+nav a.active {
+    color: #a0aec0;
+} */
+
+h1 {
+  font-size: 2.5rem;
+  margin: 25px;
+}
+
+.content {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #2b313d;
+  border-radius: 8px;
+  margin: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 25%;
+  gap: 10px;
+}
+
+button {
+  background-color: #1a202c;
+  color: #ffffff;
+  border: 2px solid #2d3748;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2b313d;
+  color: #a0aec0;
+  transform: scale(1.1);
+}
+
+button:disabled {
+  background-color: #1a202c;
+  color: gray;
+  border: 2px solid #2d3748;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
+.stopwatch-time {
+  font-size: 1.3rem;
+}
+
+.timer-time {
+  font-size: 1.3rem;
+}
+
+.timer-input {
+  padding: 5px;
+  border-radius: 3px;
+  border: none;
+  width: auto;
+}
+
+.notes-box {
+  width: 100%;
+  padding: 5px;
+  height: 125px;
+  min-height: 125px;
+  resize: vertical;
+  border: none;
+}
+
+.links {
+  width: auto;
+}
+
+.links .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-items: center;
+  width: 100%;
+}
+
+.links .container:has(:nth-child(9)) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.links .container:has(:nth-child(9)):has(:nth-child(10)) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.links a {
+  text-decoration: none;
+  background-color: #1a202c;
+  color: #ffffff;
+  border: 2px solid #2d3748;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.links a:hover {
+  background-color: #2b313d;
+  color: #a0aec0;
+  transform: scale(1.1);
+}
+
+.link-filter {
+  background-color: #1a202c;
+  color: #ffffff;
+  border: 2px solid #2d3748;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
